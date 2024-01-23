@@ -1,0 +1,299 @@
+Member Details URL
+Method	FORM POST
+API URL	api/member
+
+Description: To get member details such as their username and pass auth token on header. 
+
+Sample of response data:
+
+{
+    “error”:  200,
+    “message”: “Success”,
+    “data”: [
+        {
+            “uniqueId”: 7,
+            “username”: “wong988”,
+            “pending_deposit_credits”: 10000,
+            “pending”: “pending gameplay”,
+            “unique_link”: “https://win-lucky-ingots.com/wong988/1705565505899”,
+            “link_status”: “Expired”,
+            “total_win_amount”: 188000
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Start Game URL
+
+Method	FORM GET
+API URL	api/startgame
+
+Description: Once user clicks on Start button then it will call api, it returns result of play, pass auth token on header.
+
+Sample of request data from our end:
+Key	Type	Description
+uniqueId	Numeric	Value must be 0,1,2,3
+
+
+Sample of response data:
+
+{
+“error”:  200,
+“message”: “Success”,
+“data”: [
+    {
+        “uniqueId”: 7,
+            “username”: “wong988”,
+            “unique_link”: “https://win-lucky-ingots.com/wong988/1705565505899”,
+            “link_status”: “Expired”,
+             "claimed": true,
+             "results": {
+        	"winAmount": 14,
+        	"goldResults": [
+            		{
+                		"goldVault": [
+                    		8,
+                    		2,
+                    		4,
+                    		2
+                		],
+                		"rowId": 0,
+                		"goldId": 3,
+                		"goldAmount": 2
+            		},
+            		{
+                "goldVault": [
+                    4,
+                    2,
+                    8,
+                    2
+                ],
+                "rowId": 1,
+                "goldId": 0,
+                "goldAmount": 4
+            },
+            {
+                "goldVault": [
+                    8,
+                    2,
+                    2,
+                    4
+                ],
+                "rowId": 2,
+                "goldId": 0,
+                "goldAmount": 8
+            }
+        ],
+        "multiplierResults": {
+            "multiplierVault": [
+                1.5,
+                2,
+                3,
+                1
+            ],
+            "rowId": 3,
+            "goldId": 3,
+            "multiplierAmount": 1
+        }
+    }
+
+         }
+    ]
+}
+
+
+{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gameplay
+Method	FORM POST
+API URL	api/gameplay
+
+Description: This is the game mechanism.
+
+Sample of request data from our end:
+Key	Type	Description
+rowId	Numeric	Value must be 0,1,2,3
+goldId	Numeric	Value must be 0,1,2,3
+uniqueId	Numeric	Value must be 0,1,2,3
+
+
+Sample of response data:
+
+{
+“error”:  200,
+“message”: “Success”,
+“data”: [
+    
+    {
+        “username”: “wong988”,
+     "goldVault":[
+          8,
+          2,
+          4,
+          2
+     ],
+      "rowId": 0,
+      "goldId": 3,
+“uniqueId”: 7,
+      "goldAmount": 2         }
+]
+
+
+ },
+ {
+“error”:  200,
+“message”: “Success”,
+“data”: [
+{
+     "multiplierVault":[
+          1,
+          1.5,
+          2,
+          3
+     ],
+      "rowId": 3,
+      "goldId": 3,
+“uniqueId”: 7,
+      "multiplierAmount": 1.5,
+“winAmount”:26,
+ }]
+
+
+           
+
+
+
+Result Page
+Method	FORM GET
+API URL	api/result
+
+Description: To get the winning result.
+
+Sample of response data:
+
+{
+“error”:  200,
+“message”: “Success”,
+“data”: [
+    [
+         {
+            “username”: “wong988”,
+            
+            “total_winnings”:  “12888.0000”
+              }
+         ]
+     ]
+}
+
+
+Leaderboard
+Method	FORM GET
+API URL	api/leaderboard
+
+Description: To get the top winner from the leaderboard.
+
+Sample of response data:
+
+{
+“error”:  200,
+“message”: “Success”,
+“data”: [
+    [
+         {
+            “username”: ”***777”,
+            “total_winnings”:  “12888.0000”
+              }
+         ]
+     ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Claim Total Winning Amount
+Method	FORM POST
+API URL	api/withdrawal
+
+Description: Withdraw/Claim API is call with auth token.
+
+Sample of response data:
+
+{
+“error”:  200,
+“message”: “Claim Successfully”,
+“data”: [ ]
+}
