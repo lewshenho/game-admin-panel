@@ -98,15 +98,15 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className="app-container">
       {isAuthenticated ? (
-        <div className="app-container authenticated">
+        <>
           <Sidebar setUsers={setUsers} />
           <div className="main-container">
             <h1>All Users</h1>
             <ResponsiveTable data={users} handleLinkClick={handleLinkClick} updatePending={updatePending} />
           </div>
-        </div>
+        </>
       ) : (
         <Login onLogin={handleLogin} />
       )}

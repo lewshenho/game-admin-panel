@@ -1,0 +1,18 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the height to full viewport height */
+  }
+  
+  .login-form {
+    width: 300px; /* Adjust the width as needed */
+    /* Add your existing styling for the form */
+    text-align: center; /* Center the form content horizontally */
+    margin: auto; /* This will center the form horizontally */
+  }
+  
+  .error-message {
+    color: red;
+  }
+  

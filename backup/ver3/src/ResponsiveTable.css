@@ -1,0 +1,52 @@
+/* ResponsiveTable.css */
+.responsive-table-container {
+    overflow-x: auto;
+    z-index: 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Style the table header cells for smaller screens */
+  th {
+    display: none;
+  }
+  
+  /* Hide the first cell in each row on smaller screens (assuming it's a header cell) */
+  td:first-child {
+    display: none;
+  }
+  
+  /* Display the first cell in each row as a header on smaller screens */
+  tr:nth-child(even) td:first-child {
+    display: table-cell;
+    /* font-weight: bold; */
+  }
+  
+  @media screen and (min-width: 600px) {
+    /* Display header cells on larger screens */
+    th {
+      display: table-cell;
+      font-weight: bold;
+    }
+  
+    /* Display the first cell in each row on larger screens */
+    td:first-child {
+      display: table-cell;
+    }
+  
+    /* Hide the content of the first cell in each even row on larger screens */
+    /* tr:nth-child(even) td:first-child {
+      display: none;
+    } */
+  }
+  
