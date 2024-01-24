@@ -4,6 +4,8 @@ import Sidebar from './Sidebar';
 // import MainContent from './MainContent';
 import ResponsiveTable from './ResponsiveTable'; // Adjust the path based on your project structure
 import './App.css'; // Import your CSS file for styling
+import Login from './Login'; // Ensure you have this import statement
+
 
 export const generateUniqueLink = (user) => {
   // Use a timestamp or a random string to create a unique link
@@ -14,6 +16,10 @@ export const generateUniqueLink = (user) => {
 
 
 const App = () => {
+  const [isAuthenticated, setAuthenticated] = useState(false);
+  const handleLogin = () => {
+    setAuthenticated(true);
+  };
   
   // Example state using useState
 
@@ -93,14 +99,17 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <Sidebar setUsers={setUsers} />
-      <div className="main-container">
-        <h1>All Users</h1>
-        <ResponsiveTable data={users} handleLinkClick={handleLinkClick} updatePending={updatePending} />
-        {/* Example of using components */}
-        {/* <Header /> */}
-        {/* <MainContent userData={userData} /> */}
-      </div>
+      {isAuthenticated ? (
+        <>
+          <Sidebar setUsers={setUsers} />
+          <div className="main-container">
+            <h1>All Users</h1>
+            <ResponsiveTable data={users} handleLinkClick={handleLinkClick} updatePending={updatePending} />
+          </div>
+        </>
+      ) : (
+        <Login onLogin={handleLogin} />
+      )}
     </div>
   );
 };

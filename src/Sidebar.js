@@ -45,7 +45,7 @@ const Sidebar = ({ setUsers }) => {
 
     // Reset the selectedPending value to its default after adding the user
     setNewUser((prevUser) => ({ ...prevUser, selectedPending: 'Pending Gameplay' }));
-    setNewUser((prevUser) => ({ ...prevUser, selectedPending: 'Pending Gameplay' }));
+    // setNewUser((prevUser) => ({ ...prevUser, selectedPending: 'Pending Gameplay' }));
     setUserIDCounter(userIDCounter + 1); // Increment the user ID counter
   };
   
@@ -61,12 +61,12 @@ const Sidebar = ({ setUsers }) => {
           <p>Email:  masteradmin@gmail.com</p>
           <p>Role: Master Admin</p>
         </div>
-        <li>Dashboard</li>
+        {/* <li>Dashboard</li>
         <li>Master(Admin)</li>
-        <li>Games</li>
+        <li>Games</li> */}
         <li>All Users</li>
-        <li>Add User</li>
-        <li>Settings</li>
+        {/* <li>Add User</li>
+        <li>Settings</li> */}
         <li>
           <button onClick={openAddUserModal}>Add User</button>
         </li>
