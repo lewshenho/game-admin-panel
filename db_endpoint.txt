@@ -1,0 +1,4 @@
+admin-panel
+DB Endpoint:
+
+admin-panel-database.cjkqqa44ca1v.ap-southeast-1.rds.amazonaws.com

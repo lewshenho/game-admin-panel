@@ -17,7 +17,7 @@ const ResponsiveTable = ({ data,handleLinkClick,updatePending }) => {
 
   const getLinkStatus = (user) => {
     // Assuming there is a property in the user object indicating whether the game has been played
-    return user.clicked ? 'Expired' : 'Live';
+    return user.gamePlayed ? 'Live' : 'Expired';
   };
 
   return (
